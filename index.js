@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 80;
-const version = process.env.VERSION || 'v2 - AUTO DEPLOYED ON MY PC!';
+const version = process.env.VERSION || 'v2 - AUTO DEPLOYED ON MY PC Dammit';
 
 app.get('/', (req, res) => {
   res.send(`<h1>Hello from ${version}</h1><p>Full CI/CD Pipeline Working!</p>`);
