@@ -1,7 +1,11 @@
-FROM node:18-alpine
+FROM node:18
+
 WORKDIR /app
-COPY package.json ./
-RUN npm install --production
-COPY . .
-ENV PORT=80
-CMD ["node", "index.js"]
+
+COPY ./App /app
+
+RUN npm install --prefix /app
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
