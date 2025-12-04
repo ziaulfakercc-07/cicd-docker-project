@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real-Time Fleet Tracker</title>
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Real-Time Fleet/Asset Tracker</h1>
+      <p>
+        Live demo using <strong>FastAPI + WebSockets</strong> and <strong>Leaflet</strong>.<br/>
+        Status: <span id="ws-status" class="badge">Connecting…</span>
+      </p>
+    </header>
+
+    <main>
+      <div id="map"></div>
+      <div id="legend">
+        <h3>Legend</h3>
+        <ul>
+          <li>Blue markers: simulated assets</li>
+          <li>Updates push every second via WebSocket</li>
+        </ul>
+        <div class="controls">
+          <button id="btn-snapshot">Reload Snapshot</button>
+          <button id="btn-zoom-fit">Zoom to Markers</button>
+        </div>
+        <div id="asset-count"></div>
+      </div>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
