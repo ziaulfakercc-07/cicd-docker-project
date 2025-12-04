@@ -7,5 +7,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log("Hello from CI/CD v1");
 });
